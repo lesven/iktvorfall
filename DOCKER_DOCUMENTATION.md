@@ -10,6 +10,9 @@ Die IKT-Vorfall-Anwendung ist als Web-Anwendung konzipiert, die in einem Docker-
 - Nginx-Konfiguration für optimale Performance und Sicherheit
 - Docker Compose für einfache Bereitstellung und Verwaltung
 - Separate Konfigurationen für Entwicklung und Produktion
+- Versionierungssystem für geordnete Releases
+- Container-Healthchecks für Zuverlässigkeit
+- Persistent Log-Speicherung
 
 ## Architektur
 
@@ -65,6 +68,14 @@ Die `nginx.conf`-Datei konfiguriert den Nginx-Webserver:
 - Optimiert das Caching von statischen Ressourcen
 - Richtet einen Gesundheitsprüfungspunkt ein
 
+### Versionierung
+
+Die Anwendung verwendet semantische Versionierung nach dem Schema `MAJOR.MINOR.PATCH`:
+
+- Die aktuelle Version wird in der `version.txt`-Datei gespeichert
+- Die Versionsnummer wird beim Build in das Docker-Image eingebettet
+- Mit den Release-Skripten `Create-Release.ps1` und `create-release.sh` können neue Versionen erstellt werden
+
 ## Verwendung
 
 ### Für die Entwicklung
@@ -75,15 +86,22 @@ docker-compose up -d
 
 # In den Logs nachsehen
 docker-compose logs -f
+
+# Alternativ: Management-Skript verwenden
+./docker-manage.ps1  # Windows
+./docker-manage.sh   # Linux/macOS
 ```
 
 ### Für die Produktion
 
 ```powershell
+# Zunächst einen Release erstellen (optional)
+./Create-Release.ps1 -BumpType minor  # Erhöht die Minor-Version
+
 # Mit Produktionskonfiguration bauen und starten
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
-# Alternativ: Deploy-Skript verwenden
+# Alternativ: Deploy-Skript verwenden (empfohlen)
 ./Deploy-Production.ps1  # Windows
 ./deploy-production.sh   # Linux/macOS
 ```

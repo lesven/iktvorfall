@@ -1,10 +1,13 @@
-version: '3'
+version: '3.8'
 
 services:
   ikt-app:
+    image: ikt-vorfall-app:prod
     restart: always
-    # Entferne das Volume-Mounting für die Produktion
-    volumes: []
+    # Entferne das Development Volume-Mounting für die Produktion
+    volumes:
+      # Nur persistente Logs behalten
+      - ./logs:/var/log/nginx
     # Füge spezifische Produktionsumgebung hinzu
     environment:
       - NGINX_HOST=ikt-vorfall.example.com
@@ -15,3 +18,15 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+    # Verbesserte Sicherheitskonfiguration für Produktion
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+    # Produktion-spezifische Ports (falls HTTPS verwendet wird)
+    ports:
+      - "80:80"
+      # Bei Verwendung von HTTPS mit Zertifikat
+      # - "443:443"
+ 
