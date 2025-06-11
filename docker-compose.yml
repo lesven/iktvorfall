@@ -1,33 +1,10 @@
-version: '3.8'
+version: '3'
 
 services:
   ikt-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: ikt-vorfall-app:dev
+    build: .
     container_name: ikt-vorfall-app
     ports:
-      - "8070:80"  # Map container port 80 to host port 8080
-    restart: unless-stopped
+      - "8080:80"
     volumes:
-      # For development, mount the source files as volume
-      # Comment out in production
       - ./:/usr/share/nginx/html
-      # Persist nginx logs
-      - ./logs:/var/log/nginx
-    environment:
-      - NGINX_HOST=localhost
-      - NGINX_PORT=80
-    healthcheck:
-      test: ["CMD", "sh", "/usr/share/nginx/html/healthcheck.sh"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 5s
-    networks:
-      - ikt-network
-
-networks:
-  ikt-network:
-    driver: bridge
