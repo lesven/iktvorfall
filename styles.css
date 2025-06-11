@@ -205,8 +205,26 @@ header p {
     border-radius: 12px;
     border-left: 4px solid #2c5aa0;
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.6;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Override any existing line height on additional-info */
+.additional-info {
+    line-height: 1.4 !important;
+    padding: 15px !important;
+}
+
+/* Info header styling */
+.info-header {
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(44, 90, 160, 0.2);
+    padding-bottom: 5px;
+}
+
+.info-header strong {
+    display: inline-block;
+    margin-bottom: 0;
 }
 
 /* DORA-specific styling for structured content */
@@ -229,7 +247,33 @@ header p {
 
 /* Bullet points and lists */
 .additional-info br + • {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.additional-info br + • {
     margin-left: 15px;
+}
+
+/* Reduce spacing between bullet points */
+.additional-info br {
+    line-height: 0.8;
+}
+
+/* Reduce spacing between paragraphs */
+.additional-info p {
+    margin: 4px 0;
+}
+
+/* List items spacing */
+.additional-info ul, .additional-info ol {
+    margin: 4px 0;
+    padding-left: 16px;
+}
+
+.additional-info li {
+    margin: 2px 0;
 }
 
 /* Emphasis styling */
@@ -254,8 +298,8 @@ header p {
 
 /* Success/Error examples styling */
 .additional-info .example {
-    margin: 10px 0;
-    padding: 8px 12px;
+    margin: 5px 0;
+    padding: 6px 10px;
     border-radius: 6px;
 }
 
@@ -264,7 +308,7 @@ header p {
     border: none;
     height: 1px;
     background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
-    margin: 15px 0;
+    margin: 8px 0;
 }
 
 /* Result Styling */
@@ -471,80 +515,73 @@ footer {
     border-radius: 12px;
     border-left: 4px solid #2c5aa0;
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.6;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* DORA-specific styling for structured content */
-.additional-info strong {
-    color: #2c5aa0;
-    font-weight: 600;
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 8px;
+/* Override any existing line height on additional-info */
+.additional-info {
+    line-height: 1.4 !important;
+    padding: 15px !important;
 }
 
-.additional-info strong:first-child {
+/* Improved spacing for section titles and their content */
+.additional-info strong {
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.additional-info strong + br,
+.additional-info strong + p,
+.additional-info strong + div,
+.additional-info strong + span {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Ensure bullet points are properly aligned after headings */
+.additional-info strong + ul,
+.additional-info strong + ol {
     margin-top: 0;
 }
 
-/* Emoji icons spacing */
-.additional-info strong:before {
-    margin-right: 8px;
+/* Special styling for the main info header */
+.info-header {
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(44, 90, 160, 0.2);
+    padding-bottom: 5px;
 }
 
-/* Bullet points and lists */
-.additional-info br + • {
-    margin-left: 15px;
+/* More refined spacings between elements */
+.additional-info strong + :not(br):not(strong) {
+    margin-left: 5px;
+    display: inline-block;
 }
 
-/* Emphasis styling */
-.additional-info em {
-    color: #e74c3c;
-    font-style: normal;
-    font-weight: 500;
-    background: rgba(231, 76, 60, 0.1);
-    padding: 2px 4px;
-    border-radius: 3px;
+/* Visual separation for sections */
+.additional-info strong:not(:first-child) {
+    margin-top: 10px;
+    display: block;
 }
 
-/* Code and technical terms */
-.additional-info code {
-    background: #2c3e50;
-    color: #ecf0f1;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.9em;
-}
-
-/* Success/Error examples styling */
-.additional-info .example {
-    margin: 10px 0;
-    padding: 8px 12px;
-    border-radius: 6px;
-}
-
-/* Visual separators for different sections */
-.additional-info hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
-    margin: 15px 0;
+/* Remove extra spacing after the info-header */
+.info-header + strong {
+    margin-top: 0 !important;
 }
 
 /* Responsive improvements for mobile */
 @media (max-width: 768px) {
     .additional-info {
-        padding: 15px;
+        padding: 12px;
         font-size: 0.9rem;
         margin-top: 15px;
+        line-height: 1.4;
     }
     
     .additional-info strong {
         font-size: 0.95rem;
-        margin-top: 12px;
-        margin-bottom: 6px;
+        margin-top: 6px;
+        margin-bottom: 2px;
     }
 }
 
