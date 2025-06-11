@@ -14,7 +14,7 @@ services:
       # Comment out in production
       - ./:/usr/share/nginx/html
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:80"]
+      test: ["CMD", "sh", "/usr/share/nginx/html/healthcheck.sh"]
       interval: 30s
       timeout: 10s
       retries: 3
