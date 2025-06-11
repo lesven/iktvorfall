@@ -199,13 +199,72 @@ header p {
 
 /* Additional Info */
 .additional-info {
-    background: #f8f9fa;
-    border-left: 4px solid #3498db;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
-    font-style: italic;
-    color: #5a6c7d;
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid #2c5aa0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* DORA-specific styling for structured content */
+.additional-info strong {
+    color: #2c5aa0;
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.additional-info strong:first-child {
+    margin-top: 0;
+}
+
+/* Emoji icons spacing */
+.additional-info strong:before {
+    margin-right: 8px;
+}
+
+/* Bullet points and lists */
+.additional-info br + • {
+    margin-left: 15px;
+}
+
+/* Emphasis styling */
+.additional-info em {
+    color: #e74c3c;
+    font-style: normal;
+    font-weight: 500;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Code and technical terms */
+.additional-info code {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+/* Success/Error examples styling */
+.additional-info .example {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* Visual separators for different sections */
+.additional-info hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
+    margin: 15px 0;
 }
 
 /* Result Styling */
@@ -401,5 +460,128 @@ footer {
     
     .btn {
         border: 2px solid #333;
+    }
+}
+
+/* Enhanced Additional Info Styling */
+.additional-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid #2c5aa0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* DORA-specific styling for structured content */
+.additional-info strong {
+    color: #2c5aa0;
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.additional-info strong:first-child {
+    margin-top: 0;
+}
+
+/* Emoji icons spacing */
+.additional-info strong:before {
+    margin-right: 8px;
+}
+
+/* Bullet points and lists */
+.additional-info br + • {
+    margin-left: 15px;
+}
+
+/* Emphasis styling */
+.additional-info em {
+    color: #e74c3c;
+    font-style: normal;
+    font-weight: 500;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Code and technical terms */
+.additional-info code {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+}
+
+/* Success/Error examples styling */
+.additional-info .example {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* Visual separators for different sections */
+.additional-info hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
+    margin: 15px 0;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 768px) {
+    .additional-info {
+        padding: 15px;
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+    
+    .additional-info strong {
+        font-size: 0.95rem;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+}
+
+/* Print-friendly styles */
+@media print {
+    .additional-info {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+    
+    .additional-info strong {
+        color: black;
+    }
+    
+    .additional-info em {
+        background: none;
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .additional-info {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ecf0f1;
+        border-left-color: #3498db;
+    }
+    
+    .additional-info strong {
+        color: #3498db;
+    }
+    
+    .additional-info em {
+        background: rgba(52, 152, 219, 0.2);
+        color: #3498db;
     }
 }
