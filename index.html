@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKT-Vorfall Prüfung - ARZ Haan AG</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>ARZ Haan AG</h1>
+            </div>
+            <h2>IKT-Vorfall Prüfung (DORA)</h2>
+            <p>Bewertung der Meldepflicht bei IKT-Vorfällen</p>
+        </header>
+
+        <main>
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <div class="card">
+                    <h3>Willkommen zur IKT-Vorfall Bewertung</h3>
+                    <p>Diese interaktive Prüfung hilft Ihnen dabei zu bewerten, ob ein IKT-Vorfall nach DORA meldepflichtig ist.</p>
+                    <p>Sie werden durch 6 einfache Fragen geführt, die mit "Ja" oder "Nein" beantwortet werden können.</p>
+                    <button class="btn btn-primary" onclick="startQuestionnaire()">Prüfung starten</button>
+                </div>
+            </div>
+
+            <!-- Question Screen -->
+            <div id="question-screen" class="screen">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <span class="progress-text" id="progress-text">Frage 1 von 6</span>
+                </div>
+                
+                <div class="card">
+                    <h3 id="question-title">Frage wird geladen...</h3>
+                    <p id="question-text">Beschreibung der Frage...</p>
+                    
+                    <div id="additional-info" class="additional-info">
+                        <!-- Zusätzliche Informationen werden hier eingefügt -->
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-success" onclick="answerQuestion(true)">Ja</button>
+                        <button class="btn btn-danger" onclick="answerQuestion(false)">Nein</button>
+                    </div>
+                    
+                    <div class="navigation">
+                        <button class="btn btn-secondary" id="back-btn" onclick="goBack()" disabled>Zurück</button>
+                        <button class="btn btn-secondary" onclick="resetQuestionnaire()">Neu starten</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="result-screen" class="screen">
+                <div class="card">
+                    <div id="result-content">
+                        <!-- Ergebnis wird hier eingefügt -->
+                    </div>
+                    <div class="navigation">
+                        <button class="btn btn-secondary" onclick="resetQuestionnaire()">Neue Prüfung starten</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Screen (Nikolas) -->
+            <div id="contact-screen" class="screen">                <div class="card">
+                    <div class="contact-header">
+                        <img src="nikolas-photo.jpg" alt="Nikolas Mustermann" class="contact-photo" onerror="this.src='nikolas-photo.svg'">
+                        <div class="contact-info">
+                            <h3>Nikolas Mustermann</h3>
+                            <p class="title">Chief Information Security Officer (CISO)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>📧 E-Mail:</strong>
+                            <a href="mailto:nikolas.mustermann@arz.de?subject=IKT Meldung" class="email-link">
+                                nikolas.mustermann@arz.de
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📞 Telefon:</strong>
+                            <a href="tel:+49123456789">+49 123 456 789</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📱 Mobil:</strong>
+                            <a href="tel:+49987654321">+49 987 654 321</a>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="mailto:nikolas.mustermann@arz.de?subject=IKT Meldung" class="btn btn-primary">
+                            📧 E-Mail senden
+                        </a>
+                        <button class="btn btn-secondary" onclick="showResult()">Zurück zum Ergebnis</button>
+                    </div>
+                    
+                    <div class="success-message" id="success-message" style="display: none;">
+                        <div class="alert alert-success">
+                            ✅ Meldung wurde übermittelt. Vielen Dank!
+                        </div>
+                    </div>
+                    
+                    <div class="navigation">
+                        <button class="btn btn-secondary" onclick="resetQuestionnaire()">Neue Prüfung starten</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 ARZ Haan AG. Alle Rechte vorbehalten.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
