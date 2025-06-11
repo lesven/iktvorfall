@@ -5,6 +5,6 @@ services:
     build: .
     container_name: ikt-vorfall-app
     ports:
-      - "8080:80"
+      - "8070:80"
     volumes:
       - ./:/usr/share/nginx/html
