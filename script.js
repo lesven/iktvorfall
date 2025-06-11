@@ -4,37 +4,37 @@ const questions = [
         id: 1,
         title: "Betrifft der Vorfall IKT-Systeme?",
         text: "Ist ein Informations- und Kommunikationstechnologie-System (Server, Netzwerk, Software, etc.) betroffen?",
-        additionalInfo: "IKT-Systeme umfassen alle technischen Komponenten wie Server, Netzwerke, Anwendungen, Datenbanken und deren Infrastruktur."
+        additionalInfo: "Nach DORA gelten als IKT-Systeme alle digitalen und technischen Komponenten der IT-Infrastruktur: Hardware (Server, Computer, Netzwerkgeräte), Software (Anwendungen, Betriebssysteme, Datenbanken), Netzwerke (LAN, WAN, Internet), Cloud-Services und mobile Endgeräte. Auch kleinere Ausfälle können bei kritischen Systemen meldepflichtig sein, wenn sie die Geschäftstätigkeit beeinträchtigen. Physische Schäden an IT-Komponenten durch Stromausfall, Überhitzung oder andere Umwelteinflüsse fallen ebenfalls unter IKT-Vorfälle."
     },
     {
         id: 2,
-        title: "Sind kritische Geschäftsprozesse betroffen?",
-        text: "Beeinträchtigt der Vorfall wichtige Geschäftsabläufe oder Kundenservices?",
-        additionalInfo: "Kritische Geschäftsprozesse sind solche, deren Ausfall erhebliche Auswirkungen auf den Geschäftsbetrieb oder Kunden hätte."
+        title: "Sind kritische oder wichtige Geschäftsfunktionen betroffen?",
+        text: "Beeinträchtigt der Vorfall Geschäftsabläufe, die für die Kernaktivitäten des Unternehmens essentiell sind?",
+        additionalInfo: "DORA definiert 'kritische oder wichtige Funktionen' als Geschäftstätigkeiten, deren Störung die Finanzleistung, Solidität oder Kontinuität der Dienstleistungen erheblich beeinträchtigen würde. Bei Finanzdienstleistern umfasst dies: Zahlungsverkehr, Kreditvergabe, Handelsaktivitäten, Kundenportale, Risikomanagement-Systeme, regulatorische Berichterstattung und Compliance-Systeme. Auch Support-Funktionen wie Buchhaltung, HR-Systeme oder interne Kommunikation können kritisch sein, wenn sie zentrale Geschäftsprozesse unterstützen. Der Ausfall muss nicht vollständig sein - bereits eine erhebliche Verschlechterung der Servicequalität kann meldepflichtig sein."
     },
     {
         id: 3,
-        title: "Dauert die Störung länger als 1 Stunde?",
-        text: "Ist die Beeinträchtigung bereits länger als eine Stunde aktiv oder wird sie voraussichtlich länger dauern?",
-        additionalInfo: "Zeitkritische Vorfälle erfordern besondere Aufmerksamkeit, auch wenn sie zunächst geringfügig erscheinen."
+        title: "Dauert die Störung länger als 1 Stunde oder überschreitet Schwellenwerte?",
+        text: "Ist die Beeinträchtigung bereits länger als eine Stunde aktiv oder werden quantitative Meldekrite rien erreicht?",
+        additionalInfo: "DORA legt verschiedene Zeitkritereien fest: Bei kritischen Systemen kann bereits eine einstündige Unterbrechung meldepflichtig sein. Zusätzlich gibt es quantitative Schwellenwerte basierend auf der Anzahl betroffener Kunden, Transaktionsvolumen oder finanziellen Verlusten. Auch wenn die ursprüngliche Störung behoben ist, aber Nachwirkungen bestehen (z.B. Datenverluste, Performance-Probleme, notwendige manuelle Workarounds), kann dies die effektive Störungsdauer verlängern. Präventive Systemabschaltungen zur Schadensbegrenzung zählen ebenfalls zur Ausfallzeit."
     },
     {
         id: 4,
-        title: "Sind personenbezogene Daten betroffen?",
-        text: "Könnten personenbezogene Daten (Kundendaten, Mitarbeiterdaten, etc.) kompromittiert worden sein?",
-        additionalInfo: "Dies umfasst unbefugten Zugriff, Verlust, Diebstahl oder unbeabsichtigte Offenlegung von personenbezogenen Daten."
+        title: "Sind personenbezogene oder sensible Daten betroffen?",
+        text: "Könnten personenbezogene Daten, Geschäftsgeheimnisse oder vertrauliche Informationen kompromittiert worden sein?",
+        additionalInfo: "Nach DORA und DSGVO sind alle Vorfälle meldepflichtig, die personenbezogene Daten gefährden: unbefugter Zugriff (auch Verdachtsfälle), Datenverlust, Diebstahl, unbeabsichtigte Offenlegung, Veränderung oder Zerstörung von Daten. Dies umfasst: Kundendaten (Namen, Adressen, Finanzdaten), Mitarbeiterdaten, Transaktionsdaten, Kreditinformationen und interne Geschäftsdaten. Auch technische Daten wie Zugangsdaten, Konfigurationsdateien oder Systemlogs können sensibel sein. Bereits der Verdacht einer Kompromittierung (z.B. durch ungewöhnliche Zugriffsmuster, verdächtige Logins oder Systemalarme) kann eine Meldung rechtfertigen. Bei Cloud-Systemen müssen auch potentielle Datenlecks bei Drittanbietern berücksichtigt werden."
     },
     {
         id: 5,
-        title: "Sind externe Systeme oder Partner betroffen?",
-        text: "Betrifft der Vorfall Systeme von Dritten oder könnte er sich auf externe Partner auswirken?",
-        additionalInfo: "Externe Systeme können Cloud-Services, Dienstleister oder Partnerunternehmen umfassen."
+        title: "Sind externe IKT-Dienstleister oder Partner betroffen?",
+        text: "Betrifft der Vorfall Cloud-Services, IT-Dienstleister oder könnte er sich auf Geschäftspartner auswirken?",
+        additionalInfo: "DORA legt besonderen Fokus auf IKT-Drittdienstleister-Risiken. Meldepflichtig sind Vorfälle bei: Cloud-Anbietern (AWS, Microsoft Azure, Google Cloud), Software-as-a-Service Providern, Rechenzentren, Telekommunikationsanbietern, Payment-Processorns und anderen IT-Outsourcing-Partnern. Auch Lieferketteneffekte sind relevant: Störungen bei einem Dienstleister können mehrere Finanzinstitute gleichzeitig betreffen und systemische Risiken schaffen. Bei grenzüberschreitenden Dienstleistern können verschiedene Aufsichtsbehörden betroffen sein. Wichtig ist auch die Bewertung von Abhängigkeiten: Fallen mehrere kritische Services gleichzeitig aus, oder könnte ein Vorfall auf andere Systeme übergreifen? Subunternehmer und deren Sicherheitsvorfälle müssen ebenfalls berücksichtigt werden."
     },
     {
         id: 6,
-        title: "Besteht Verdacht auf Cyberangriff?",
-        text: "Gibt es Anzeichen für einen möglichen Cyberangriff, Malware oder unbefugten Zugriff?",
-        additionalInfo: "Dazu gehören ungewöhnliche Systemaktivitäten, verdächtige E-Mails, unbekannte Prozesse oder Sicherheitswarnungen."
+        title: "Besteht Verdacht auf Cyberangriff oder böswillige Aktivitäten?",
+        text: "Gibt es Anzeichen für einen möglichen Cyberangriff, Malware, Social Engineering oder anderen böswilligen Zugriff?",
+        additionalInfo: "Cyberangriffe sind nach DORA grundsätzlich meldepflichtig, da sie erhebliche operative Risiken darstellen. Indizien für böswillige Aktivitäten: ungewöhnliche Netzwerkaktivitäten, verdächtige E-Mails oder Phishing-Versuche, unerklärliche Systemverlangsamungen, unbekannte Dateien oder Prozesse, unautori sierte Änderungen an Systemkonfigurationen, Anomalien in Logdateien, Erpressungsmeldungen (Ransomware), DDoS-Angriffe, ungewöhnliche Datentransfers, verdächtige Benutzeranmeldungen außerhalb der Geschäftszeiten oder von ungewöhnlichen Standorten. Auch erfolglose Angriffsversuche können meldepflichtig sein, wenn sie auf systematische Angriffe hindeuten oder Schwachstellen aufdecken. Social Engineering-Angriffe, bei denen Mitarbeiter zur Preisgabe von Zugangsdaten verleitet werden, fallen ebenfalls in diese Kategorie. Bei Verdacht sollte sofort eine forensische Untersuchung eingeleitet werden."
     }
 ];
 
