@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  ikt-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ikt-vorfall-app
+    ports:
+      - "8080:80"  # Map container port 80 to host port 8080
+    restart: unless-stopped
+    volumes:
+      # For development, mount the source files as volume
+      # Comment out in production
+      - ./:/usr/share/nginx/html
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s

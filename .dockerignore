@@ -1,0 +1,23 @@
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Documentation
+README.md
+ANFORDERUNG.md
+ENHANCEMENT_SUMMARY.md
+
+# Other files not needed in the Docker image
+*.log
+node_modules
