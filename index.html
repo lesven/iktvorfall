@@ -20,10 +20,14 @@
             <div id="welcome-screen" class="screen active">
                 <div class="card">
                     <h3>Willkommen zur IKT-Vorfall Bewertung</h3>
-                    <p>Diese interaktive Prüfung hilft dir dabei zu bewerten, ob ein IKT-Vorfall nach DORA meldepflichtig ist.</p>
-                    <p>Du wirst durch 6 einfache Fragen geführt, die mit "Ja" oder "Nein" beantwortet werden können.</p>
+                    <p>Es gibt einen Security Vorfall und du bist dir nicht sicher ob der meldepflichtig ist?  Diese interaktive Prüfung hilft dir dabei zu bewerten, ob ein IKT-Vorfall nach DORA meldepflichtig ist.<br><br></p>
+                    <p>Du wirst durch 6 einfache Fragen geführt, die mit "Ja" oder "Nein" beantwortet werden können. Unterhalb der Fragen findest du Besiepiel und weitereführende Informationen<br><br>
+                    Grundsätzlich gilt aber natürlich: Wenn du dir unsicher bist, ziehe lieber jederzeit unsere Experten Nikolas Oelkrug-Alders, Ricardo Walsdorfer oder Anika Rüttgers hinzu.</p>
                     
-                    <p><button class="btn btn-primary" onclick="startQuestionnaire()">Prüfung starten</button></p>
+                    <p>
+                        <div class="button-group">
+                        <button class="btn btn-primary" onclick="startQuestionnaire()">Schnellcheck starten</button></p>
+                        </div>
                 </div>
             </div>
 
@@ -83,23 +87,16 @@
                         <div class="contact-item">
                             <strong>📧 E-Mail:</strong>
                             <a href="mailto:N.Oelkrug-Alders@arz.de?subject=IKT Meldung" class="email-link">
-                                N.Oelkrug-Alders@arz.de
+                                <a href="mailto:N.Oelkrug-Alders@arz.de?subject=IKT Meldung"></a>N.Oelkrug-Alders@arz.de</a>
                             </a>
                         </div>
+                       
                         <div class="contact-item">
-                            <strong>📞 Telefon:</strong>
-                            <a href="tel:+49 211 52024 0">+49 211 52024 0</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>📱 Mobil:</strong>
+                            <strong>📱 Telefon:</strong>
                             <a href="tel:+49 151 5370 4297 ">+49 151 5370 4297 </a>
                         </div>
-                    </div>                    <div class="action-buttons">
-                        <a href="mailto:N.Oelkrug-Alders@arz.de?subject=IKT Meldung" class="btn btn-primary">
-                            📧 E-Mail senden
-                        </a>
-                        <button class="btn btn-secondary" onclick="showResult()">Zurück zum Ergebnis</button>
-                    </div>
+                    </div>                    
+                        
                     
                     <div class="success-message" id="success-message" style="display: none;">
                         <div class="alert alert-success">
@@ -108,7 +105,7 @@
                     </div>
                     
                     <div class="navigation">
-                        <button class="btn btn-secondary" onclick="resetQuestionnaire()">Neue Prüfung starten</button>
+                        <button class="btn btn-secondary" onclick="resetQuestionnaire()">Schnellcheck erneut starten</button>
                     </div>
                 </div>
             </div>
