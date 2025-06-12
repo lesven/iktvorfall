@@ -5,9 +5,42 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>IKT-Vorfall Prüfung - ARZ Haan AG</title>    <link rel="stylesheet" href="styles.css">
-    <!-- Version-Script zur Verhinderung von Browser-Caching -->
+    <title>IKT-Vorfall Prüfung - ARZ Haan AG</title>    <link rel="stylesheet" href="styles.css">    <!-- Version-Script zur Verhinderung von Browser-Caching -->
     <script src="version.js"></script>
+    <script>
+        // Inline-Funktion zur Verhinderung von Browser-Caching
+        (function() {
+            // Zufällige ID für diese Sitzung generieren
+            var cacheBuster = 'nocache=' + Math.random().toString(36).substring(2, 15);
+            
+            // Funktion zum Hinzufügen des Parameters zu URLs
+            function addCacheBusterToUrl(url) {
+                return url + (url.indexOf('?') >= 0 ? '&' : '?') + cacheBuster;
+            }
+            
+            // Alle Stylesheets mit Cache-Buster versehen
+            var styleSheets = document.styleSheets;
+            for (var i = 0; i < styleSheets.length; i++) {
+                try {
+                    if (styleSheets[i].href) {
+                        var linkElem = document.querySelector('link[href="' + styleSheets[i].href.split('?')[0] + '"]');
+                        if (linkElem) {
+                            linkElem.href = addCacheBusterToUrl(linkElem.href);
+                        }
+                    }
+                } catch (e) {
+                    console.log('Cache-Busting für Stylesheet fehlgeschlagen:', e);
+                }
+            }
+            
+            // Bei Zurück-Navigation neuladen erzwingen
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                    window.location.reload();
+                }
+            });
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
