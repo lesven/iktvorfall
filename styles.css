@@ -421,15 +421,92 @@ header p {
     border: 1px solid #10b981;
 }
 
-/* Footer */
-footer {
+/* Info Links */
+.info-links {
+    margin: 20px 0;
     text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    color: #7f8c8d;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-link {
+    background: transparent;
+    color: #2c5aa0;
+    border: 2px solid #2c5aa0;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    background: #2c5aa0;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Process Information Styles */
+.process-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.process-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.process-section h4 {
+    color: #2c5aa0;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.process-steps {
+    margin-top: 15px;
+}
+
+.step {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step strong {
+    color: #2c5aa0;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.roles-table {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.role-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95rem;
+}
+
+.role-item:last-child {
+    border-bottom: none;
+}
+
+.role-item strong {
+    color: #2c5aa0;
+    display: inline-block;
+    min-width: 140px;
 }
 
 /* Responsive Design */

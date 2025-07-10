@@ -25,10 +25,15 @@
                     <p>Du wirst durch<strong> 6 einfache Fragen</strong> geführt, die mit "Ja" oder "Nein" beantwortet werden können. <strong>Unterhalb der Fragen findest du Beispiele</strong> und weitereführende Informationen<br><br>
                     Grundsätzlich gilt aber natürlich: Wenn du dir <strong>unsicher</strong> bist, <strong>ziehe lieber jederzeit unsere Experten</strong> Nikolas Oelkrug-Alders, Ricardo Walsdorfer oder Anika Rüttgers <strong>hinzu</strong>.</p>
                     
-                    <p>
-                        <div class="button-group">
-                        <button class="btn btn-primary" onclick="startQuestionnaire()">Schnellcheck starten</button></p>
-                        </div>
+                    <div class="info-links">
+                        <button class="btn btn-link" onclick="showProcessInfo()">
+                            📋 Wie läuft das IKT-Vorfallsmanagement ab?
+                        </button>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-primary" onclick="startQuestionnaire()">Schnellcheck starten</button>
+                    </div>
                 </div>
             </div>
 
@@ -107,6 +112,83 @@
                     
                     <div class="navigation">
                         <button class="btn btn-secondary" onclick="resetQuestionnaire()">Schnellcheck erneut starten</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Information Screen -->
+            <div id="process-info-screen" class="screen">
+                <div class="card">
+                    <h3>🛡 IKT-Vorfallsmanagement – Übersicht</h3>
+                    
+                    <div class="process-section">
+                        <h4>Was ist ein IKT-Vorfall?</h4>
+                        <p>Ein IKT-Vorfall ist ein ungeplantes Ereignis, das die IT-Systeme oder Daten eines Unternehmens stört.<br>
+                        <strong>Beispiele:</strong> Systemausfälle, Sicherheitslücken oder unbefugte Zugriffe.<br>
+                        Solche Vorfälle können die <strong>Verfügbarkeit</strong>, <strong>Vertraulichkeit</strong> oder <strong>Integrität</strong> unserer Daten beeinträchtigen.</p>
+                    </div>
+
+                    <div class="process-section">
+                        <h4>Warum ist das Thema relevant?</h4>
+                        <p>IT-Störungen können zu <strong>finanziellen Schäden</strong>, <strong>Vertrauensverlust</strong> oder <strong>rechtlichen Problemen</strong> führen.<br>
+                        Besonders schwerwiegende Vorfälle müssen laut gesetzlicher Vorgaben (z. B. <strong>DORA</strong>) innerhalb kurzer Fristen gemeldet werden.<br>
+                        Deshalb ist ein klarer und strukturierter Ablauf notwendig.</p>
+                    </div>
+
+                    <div class="process-section">
+                        <h4>Wie läuft das IKT-Vorfallsmanagement ab?</h4>
+                        <div class="process-steps">
+                            <div class="step">
+                                <strong>1. Erkennung und Meldung:</strong><br>
+                                Mitarbeitende melden auffällige IT-Vorfälle – z. B. beim IT-Helpdesk oder Support.
+                            </div>
+                            <div class="step">
+                                <strong>2. Erstbewertung:</strong><br>
+                                IT-Fachkräfte prüfen, ob ein meldepflichtiger Vorfall vorliegt, und leiten die Informationen weiter.
+                            </div>
+                            <div class="step">
+                                <strong>3. Koordination und Bearbeitung:</strong><br>
+                                Der <em>Incident Manager</em> übernimmt die Steuerung.<br>
+                                Technische Teams analysieren die Ursache und beheben das Problem.
+                            </div>
+                            <div class="step">
+                                <strong>4. Meldung an Behörden (falls erforderlich):</strong><br>
+                                Bei schwerwiegenden Vorfällen erfolgt eine offizielle Meldung – oft innerhalb von 24 Stunden.
+                            </div>
+                            <div class="step">
+                                <strong>5. Nachbereitung und Verbesserung:</strong><br>
+                                Der Vorfall wird ausgewertet. Prozesse und Sicherheitsmaßnahmen werden ggf. angepasst.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-section">
+                        <h4>Rollen und Verantwortlichkeiten</h4>
+                        <div class="roles-table">
+                            <div class="role-item">
+                                <strong>Mitarbeitende:</strong> Vorfälle melden
+                            </div>
+                            <div class="role-item">
+                                <strong>IT-Helpdesk:</strong> Erste Einschätzung und Weiterleitung
+                            </div>
+                            <div class="role-item">
+                                <strong>Incident Manager:</strong> Koordination, Dokumentation, ggf. Meldung
+                            </div>
+                            <div class="role-item">
+                                <strong>Technische Teams:</strong> Analyse und Behebung der Vorfälle
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-section">
+                        <h4>Ziel des Prozesses</h4>
+                        <p>IKT-Vorfälle sollen <strong>schnell erkannt</strong>, <strong>richtig eingeordnet</strong> und <strong>effektiv bearbeitet</strong> werden.<br>
+                        So sichern wir die <strong>Stabilität der IT</strong>, <strong>minimieren Risiken</strong> und erfüllen <strong>gesetzliche Anforderungen</strong>.</p>
+                    </div>
+
+                    <div class="navigation">
+                        <button class="btn btn-secondary" onclick="hideProcessInfo()">Zurück zur Startseite</button>
+                        <button class="btn btn-primary" onclick="startQuestionnaire()">Schnellcheck starten</button>
                     </div>
                 </div>
             </div>
@@ -420,6 +502,15 @@
             if (successMessage) {
                 successMessage.style.display = 'none';
             }
+        }
+
+        // Prozess-Information zeigen/verbergen
+        function showProcessInfo() {
+            showScreen('process-info-screen');
+        }
+
+        function hideProcessInfo() {
+            showScreen('welcome-screen');
         }
 
         // E-Mail-Klick-Tracking für Erfolgsmeldung
